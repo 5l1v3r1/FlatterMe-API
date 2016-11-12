@@ -20,7 +20,7 @@ exports.handler = (event, context) => {
     if (event.session.new) {
     console.log("NEW SESSION")
     complimentsIndex = [];
-    complimentIndex.length = 0;
+    complimentsIndex.length = 0;
     }
     
     switch (event.request.type) {
