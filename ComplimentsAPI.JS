@@ -14,10 +14,13 @@ var complimentOutput = randomcompliment;
 
 exports.handler = (event, context) => {
     
+
     try {
         
     if (event.session.new) {
     console.log("NEW SESSION")
+    complimentsIndex = [];
+    complimentIndex.length = 0;
     }
     
     switch (event.request.type) {
@@ -30,7 +33,7 @@ exports.handler = (event, context) => {
                 )
              )
             break;
-            
+             
             case "IntentRequest":
                 console.log('INTENT REQUEST')
 
@@ -54,9 +57,8 @@ exports.handler = (event, context) => {
     }
     
     } catch(error) { context.fail('Exception: ${error}')}
-  
+
 }
- 
 
 speechletResponse = (outputText, shouldEndSession) => {
  
@@ -66,6 +68,7 @@ speechletResponse = (outputText, shouldEndSession) => {
          text: outputText
      },
      shouldEndSession: shouldEndSession
+     
  }
  
 }
