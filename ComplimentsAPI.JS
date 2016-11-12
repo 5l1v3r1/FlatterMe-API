@@ -1,30 +1,30 @@
 //possible pull from common compliments website.
-var https = require('https')
+var https = require('https');
 
 var compliments = [
     "Hey why are you so cute",
     "You look stunning today",
-    "Not sure why I didn't notice this before, but you sexy",
-    "I need a glass of water, cause your looking good"
+    "Not sure why I didn't notice this before, but you're sexy",
+    "I need a glass of water, cause you're looking good"
 ];
 
-var complimentsIndex = compliments[Math.floor(Math.random()*compliments.length)];
-
-exports.handler = (event, context) => {
+exports.handler = function (event, context) {
 
     try {
         
     if (event.session.new) {
     console.log("NEW SESSION")
+    var complimentsIndex = ""
     
     }
     
     switch (event.request.type) {
             case "LaunchRequest":
             console.log('LAUNCH REQUEST')
+            var complimentsIndex = compliments[Math.floor(Math.random()*compliments.length)];
             context.succeed(
                 initResponse(
-                    speechletResponse(randomcompliment, true),
+                    speechletResponse(complimentsIndex, true),
                     {}
                 )
              )
@@ -74,6 +74,12 @@ initResponse = (speechletResponse, sessionAttributes) => {
     return {
         version: "1.0",
         sessionAttributes: sessionAttributes,
-        response: speechletResponse
+        response: speechletResponse,
+
     }
+    
 }
+
+
+
+
