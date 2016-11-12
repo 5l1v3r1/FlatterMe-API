@@ -8,19 +8,15 @@ var compliments = [
     "I need a glass of water, cause your looking good"
 ];
 
-var complimentsIndex = Math.floor(Math.random() * compliments.length);
-var randomcompliment = compliments[complimentsIndex];
-var complimentOutput = randomcompliment;
+var complimentsIndex = compliments[Math.floor(Math.random()*compliments.length)];
 
 exports.handler = (event, context) => {
-    
 
     try {
         
     if (event.session.new) {
     console.log("NEW SESSION")
-    complimentsIndex = [];
-    complimentsIndex.length = 0;
+    
     }
     
     switch (event.request.type) {
@@ -28,7 +24,7 @@ exports.handler = (event, context) => {
             console.log('LAUNCH REQUEST')
             context.succeed(
                 initResponse(
-                    speechletResponse(complimentOutput, true),
+                    speechletResponse(randomcompliment, true),
                     {}
                 )
              )
