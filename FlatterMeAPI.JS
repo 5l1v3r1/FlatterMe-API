@@ -6,7 +6,10 @@ var compliments = [
     "Hey why are you cuter then kittens!",
     "You look stunning today, I've been shocked.",
     "Not sure why I didn't notice this before, but you're sexier then a perfectly flipped pancake",
-    "I need a glass of water, cause you're looking good and making me thirsty"
+    "I need a glass of water, cause you're looking good and making me thirsty",
+    "Dang, you look sweeter then cookie dough and I really like cookie dough",
+    "You're like a fine wine, I'm not sure how old you are but just trust me on this.",
+    "If I had a choice of eating a golden marshmellow from the land of Narnia or hanging out with you, I'd hang out with you."
 ];
 
 exports.handler = function (event, context) {
