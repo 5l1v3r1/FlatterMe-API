@@ -35,10 +35,10 @@ exports.handler = function (event, context) {
                 console.log('INTENT REQUEST')
 
                 switch(event.request.intent.name) {
-                    case "TellMe":
+                    case "forhelp":
                         context.succeed(
                             initResponse(
-                                speechletResponse("You are just outrageously sexy.", true),
+                                speechletResponse("Just say Alexa Flatter Me for a compliment, don't be shy.", true),
                                 {}
                             )
                         )
